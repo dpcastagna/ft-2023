@@ -1,0 +1,26 @@
+<h1>Songs!</h1>
+<h2>Add a song</h2>
+<form method="POST" action="/songs">
+  Song: <input type="text" name="name" /><br />
+  Rating: <input type="number" name="rating" /><br />
+  <input type="submit" value="Submit!" />
+</form>
+<table>
+  <tr>
+    <th>Song name</th>
+    <th>Rating</th>
+    <th>Delete</th>
+  </tr>
+  <!-- insert songs here -->
+  <% it.songs.forEach((obj) => { %>
+    <tr>
+      <td><%= obj.name %></td>
+      <td><%= obj.rating %></td>
+      <td>
+        <form method="POST" action="/songs/<%= obj.id %>/delete">
+          <input type="submit" value="Delete" />
+        </form>
+      </td>
+    </tr>
+  <% }); %>
+</table>

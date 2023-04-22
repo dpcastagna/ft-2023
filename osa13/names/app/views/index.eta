@@ -1,0 +1,13 @@
+<h1>Names!</h1>
+<form method="POST" action="/names">
+  <input type="text" name="name" />
+  <input type="submit" value="Submit!" />
+</form>
+<ul>
+  <% it.names.forEach((obj) => { %>
+    <li><%= obj.name %></li>
+    <form method="POST" action="/names/<%= obj.id %>/delete">
+      <input type="submit" value="Delete" />
+    </form>
+  <% }); %>
+</ul>
