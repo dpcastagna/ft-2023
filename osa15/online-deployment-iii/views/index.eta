@@ -1,0 +1,10 @@
+<h1>Chat app</h1>
+<h2>Add a message</h2>
+<form method="POST" action="/">
+  Sender: <input type="text" name="sender" /><br />
+  Message: <input type="text" name="message" /><br />
+  <input type="submit" value="Submit!" />
+</form>
+<% it.messages.forEach((obj) => { %>
+  <%= obj.sender %>: <%= obj.message %><br />
+<% }); %>
